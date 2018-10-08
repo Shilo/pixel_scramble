@@ -3,14 +3,15 @@ int counter = 0;
 String fileName; // image file name
 
 void setup() {
-  size(displayWidth, displayHeight);
+  size(400, 300);
+  frame.setResizable(true);
   selectInput("Select an image file (.png, .jpg, .gif) to process:", "selectFile");
 }
 
 void draw() {
   background(255);
   if(input != null) {
-    image(input, (displayWidth/2 - input.width/2), (displayHeight/2 - input.height/2));
+    image(input, (width/2 - input.width/2), (height/2 - input.height/2));
   }
 }
 
@@ -57,12 +58,4 @@ void keyPressed() {
     println(fileName + " has been saved successfully.");
     counter++;
   }
-}
-
-/*
- * Go full screen.
- */
-
-boolean sketchFullScreen() {
-  return true;
 }
